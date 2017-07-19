@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HANOI TOWER</title>
+  <style>
+    .body {
+      margin: 0 auto;
+      background: #ffebee;
+    }
+    img{
+      width: 10%;
+    }
+
+    .modal{
+      text-align: center;
+      color: red;
+      text-transform: uppercase;
+    }
+    #disk, #draw,#start{
+      width: 100px;
+      padding: 5px;
+    }
+    #draw{
+      background: #1565c0;
+      border-color: #1565c0;
+      color: white
+    }
+
+    #start{
+      background: #b71c1c;
+      border-color: #b71c1c;
+      color: white
+      
+    }
+    
+    .rect-svg {
+      fill: rgba(96, 125, 139, 0.7);
+      stroke: rgba(0, 0, 0, 0.8);
+      stroke-width: 2;
+    }
+
+    .disk-svg {
+      stroke: rgba(0, 0, 0, 0.8);
+      stroke-width: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="modal">
+			<h1>Hanoi Towers</h1>
+			<input type="number" name="diskLength" id="disk" value="0">
+			<button id="draw">Draw</button>
+      <button id="start">Start</button>
+	</div>
+  
+
+
+  <script src="./jQuery/jquery.js" type="text/JavaScript"></script>
+  <script src="./d3/d3.min.js" type="text/JavaScript"></script>
+  <script src="./ClassExport.js"></script>
+   <script src="./Main.js"></script> 
+  
+</body>
+
+</html> 

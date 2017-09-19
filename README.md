@@ -1,8 +1,8 @@
 # Hà Nội Tower
 ## Giới thiệu
-* Ngôn ngữ JavaScript: Lập trình hướng đối tượng
+* Ngôn ngữ JavaScript: Lập trình hướng đối tượng
 * D3Js 
-## Logic (algrorithm)
+## Logic (algrorithm)
 #### Sử dụng đệ qui 
 ```js
 class TowerDemo {
@@ -19,16 +19,16 @@ let tower = new Tower()
 tower.changeDisk(2, "colA", "colB", "colC")
 ```
   * colA: tháp bắt đầu
-  * colB: tháp trung gian,
+  * colB: tháp trung gian,
   * colC: tháp đích
   * Disk: số lượng đĩa cần di chuyển
   
 #### Các giải
   * Chuyển n - 1  đĩa từ tháp bắt đầu A () tới tháp trung gianB--->(~ tháp đích) chuyển B tháp bắt đầu lúc này C là tháp trung gian
-  * Chuyển đĩa n từ tháp bắt đầu A tới tháp đích C
+  * Chuyển đĩa n từ tháp bắt đầu A tới tháp đích C
   * Chuyển n - 1 đĩa từ tháp B (~ tháp bắt đầu) qua tháp C (~ tháp đích) lúc này A là tháp trung gian
   * Tiến hành bước 1 và 3, áp dụng lại thuật giải cho n-1.
-## Soure code: sử dụng ES6 and OOPOOP
+## Soure code: sử dụng ES6 and OOP
 #### Bước 1
 * Tạo các đối tượng Disk, Tower, GameEngine
 ```js
@@ -72,11 +72,11 @@ Move 1 from colB --> colC
 
 ```
 #### Bước 2: Thêm biến data cho class GameEngine để lưu lại các bước thực hiện bài toán
-* Lưu dữ liệu từng bước (step) chuyển đĩa vào đối tượng GameEngine để xử lý
-* Dữ liệu step kiểu đối tượng các 3 thuộc tính:
+* Lưu dữ liệu từng bước (step) chuyển đĩa vào đối tượng GameEngine để xử lý
+* Dữ liệu step kiểu đối tượng các 3 thuộc tính:
   * name: tên đĩa {object Disk}
   * fromTower: di chuyển từ tháp {} 
-  * toTower: di chuyển đến tháp {}
+  * toTower: di chuyển đến tháp {}
 * Mỗi step được lưu trữ trong dữ liệu data []
 
 ```js
@@ -106,9 +106,9 @@ class GameEngine {
 ```
 * Data lưu tại step với thông tin đối tượng disk đi chuyển, đối tượng tháp bắt đầu, đối tượng tháp đến từ đó ta có thể lấy ta dữ liệu từng step để tính toán
 
-#### Bước 3: Draw
-* Thêm phương thức draw cho đối tượng Disk và Tower (mặc định 3 tháp)
-* Tạo khung SVG để vẽ tháp, tính toán các khoảng các cho 1 khung chứa 1 tháp (tháp còn lại tượng tự cộng thêm k/c toạ độ X)
+#### Bước 3: Draw
+* Thêm phương thức draw cho đối tượng Disk và Tower (mặc định 3 tháp)
+* Tạo khung SVG để vẽ tháp, tính toán các khoảng các cho 1 khung chứa 1 tháp (tháp còn lại tượng tự cộng thêm k/c toạ độ X)
 ```js
 // Khai báo khung SVG
 const svgFrame = {
@@ -130,7 +130,7 @@ svg.attr('width', svgFrame.width)
 svg.attr('height', svgFrame.height)
 ```
 
-* Dựa vào khung ở trên chia 1 tower chiếm 1200/3 = 400 width tiến hành vẽ tháp
+* Dựa vào khung ở trên chia 1 tower chiếm 1200/3 = 400 width tiến hành vẽ tháp
 * Thêm các thuộc tính từ svgFrame để vẽ tháp
 
 ```js
@@ -166,8 +166,8 @@ class Tower {
   }
 }
 > Disk
-// Trong đối tượng Disk thêm 2 thuộc tính vị trí trong mảng disks (posOfTower) và vị trí trên tháp (posOfTower)
-// Vị trí trong mảng để tính độ dài của đĩa vị trí càng lớn độ dài càng lớn
+// Trong đối tượng Disk thêm 2 thuộc tính vị trí trong mảng disks (posOfTower) và vị trí trên tháp (posOfTower)
+// Vị trí trong mảng để tính độ dài của đĩa vị trí càng lớn độ dài càng lớn
 // Vị trí trong tháp để tính toạn độ theo trục Y vị trí càng cao thì Y càng giảm
 class Disk {
   constructor(nameTower, posOfDisks, posOfTower) {
@@ -192,7 +192,7 @@ class Disk {
   }
 }
 let numberTower = 3 // So luong thap
-let numberDisk = 3 // Số lượng đĩa
+let numberDisk = 3 // Số lượng đĩa
 let towers = []
 let disks = []
 // Vẽ tháp
@@ -212,9 +212,9 @@ for (let i = 0; i < numberDisk; i++) {
 }
 ```
 
-* Trong đối tượng GameEngine thêm 2 phương thức:
-  * distanceTower(tower1,tower2)==> trả về khoảng cách giữa 2 tháp khi đĩa di chuyển
-  * diskOfTowerUpdate(disk, tower1, tower2) ==> khi đĩa di chuyển số lượng đĩa trong tháp bắt đầu loại bỏ phần tử cuối, và tháp đích thêm đĩa di chuyển tới  
+* Trong đối tượng GameEngine thêm 2 phương thức:
+  * distanceTower(tower1,tower2)==> trả về khoảng cách giữa 2 tháp khi đĩa di chuyển
+  * diskOfTowerUpdate(disk, tower1, tower2) ==> khi đĩa di chuyển số lượng đĩa trong tháp bắt đầu loại bỏ phần tử cuối, và tháp đích thêm đĩa di chuyển tới  
 #### Animation
 
 * Trong GameEngine thêm phương thức start() để tạo animation cho game
@@ -229,7 +229,7 @@ for (let i = 0; i < numberDisk; i++) {
       let posOfDisks = disk.name.posOfDisks
       //Vị trí của đĩa trong Tower
       let posOfTower = disk.name.posOfTower
-      // Toa do cua dia ban dau theo truc X (lúc đầu chưa di chuyển toạ độ (0,0))
+      // Toa do cua dia ban dau theo truc X (lúc đầu chưa di chuyển toạ độ (0,0))
       let cooX = disk.name.x_ 
       // Toa do cua dia ban dau theo truc Y
       let cooY = svgFrame.towerFrame - (3 * svgFrame.marginX) - heightDisk * posOfTower
@@ -275,14 +275,14 @@ for (let i = 0; i < numberDisk; i++) {
         .attr('transform', 'translate(' + -cooX + ',' + cooY + ')')
 
        
-      // Cập nhật lại toạ độ của disk 
+      // Cập nhật lại toạ độ của disk 
       disk.name.x_ += distance
 
     })
   }
 
 ```
-#### Bước 5: Hoàn thiện thêm đối tượng Bird tạo thêm hiệu ứng animation cho đẹp, sử lý thêm logic tuỳ thuộc và độ các của tháp khi vẽ ở trên
+#### Bước 5: Hoàn thiện thêm đối tượng Bird tạo thêm hiệu ứng animation cho đẹp, sử lý thêm logic tuỳ thuộc và độ các của tháp khi vẽ ở trên
 
 ```js
 class Bird {
@@ -303,7 +303,7 @@ class Bird {
 }
 ```
 
-* Hoàn thành source code runing trên wedbower để kiểm tra từng bước
+* Hoàn thành source code runing trên wedbower để kiểm tra từng bước
 
 
 
